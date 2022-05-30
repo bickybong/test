@@ -4,9 +4,137 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>First webpate</title>
+    <script src="script.js" defer></script>
+    <link rel = "stylesheet" href = "style.css">
+
 </head>
 <body>
-    <p>cracked</p>
+    <form action="example.com/path" method="post"> 
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" id="firstName" placeholder="Deez...">
+
+        <label for="user_email">Email Address:</label>
+        <input type="email" id="user_email" name="email" placeholder="you@example.com" multiple>
+
+        <label for="user_password">Password:</label>
+        <input type="password" id="user_password" name="password">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="hidden">hidden</label>
+        <input type="hidden" id="timestamp" name="timestamp" value="1286705410">
+
+        <label for=" file">Choose file: </label>
+        <input type="file" name="file" id="file" accept="image/*" multiple>
+        
+        <label for=" search">search: </label>
+        <input type="search" id="search" name="search">
+
+        <label for=" telphone">telphone: </label>
+        <input type="tel" id="tel" name="tel">
+
+        <label for=" url">url: </label>
+        <input type="url" id="url" name="url">
+
+        <label for=" number">number: </label>
+        <input type="number" name="age" id="age" min="1" max="10" step="2">
+
+        <label for="price">Choose a maximum house price: </label>
+        <input type="range" name="price" id="price" min="50000" max="500000" step="100" value="250000">
+        <output class="price-output" for="price"></output>
+        <script>
+            const price = document.querySelector('#price');
+            const output = document.querySelector('.price-output');
+
+            output.textContent = price.value;
+
+            price.addEventListener('input', function() {
+            output.textContent = price.value;
+            });
+        </script>
+
+        <textarea rows="10" cols="70">Some initial content</textarea>
+
+        <select name="fashion" multiple size="2">
+            <optgroup label="Clothing">
+              <option value="t_shirt">T-Shirts</option>
+              <option value="sweater">Sweaters</option>
+              <option value="coats">Coats</option>
+            </optgroup>
+            <optgroup label="Foot Wear">
+              <option value="sneakers">Sneakers</option>
+              <option value="boots">Boots</option>
+              <option value="sandals" selected>Sandals</option>
+            </optgroup>
+        </select>
+
+        <fieldset>
+            <legend>What would you like to drink?</legend>
+        
+            <div>
+            <input type="radio" name="drink" id="coffee" value="coffee">
+            <label for="coffee">Coffee</label>
+            </div>
+        
+            <div>
+            <input type="radio" name="drink" id="tea" value="tea">
+            <label for="tea">Tea</label>
+            </div>
+        
+            <div>
+            <input type="radio" name="drink" id="soda" value="soda">
+            <label for="soda">Soda</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+                    <legend>Choose all the vegetables you like to eat</legend>
+                    <ul>
+                    <li>
+                        <label for="carrots">Carrots</label>
+                        <input type="checkbox" id="carrots" name="vegetable" value="carrots" checked>
+                    </li>
+                    <li>
+                        <label for="peas">Peas</label>
+                        <input type="checkbox" id="peas" name="vegetable" value="peas">
+                    </li>
+                    <li>
+                        <label for="cabbage">Cabbage</label>
+                        <input type="checkbox" id="cabbage" name="vegetable" value="cabbage">
+                    </li>
+                    </ul>
+        </fieldset>
+
+        <p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+                <div>
+                    <label for="username">Name: <abbr title="required" aria-label="required">*</abbr></label>
+                    <input id="username" type="text" name="username">
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button">Click to Toggle</button>
+
+        <label for="myFruit">What is your favorite fruit? (With fallback)</label>
+        <input type="text" id="myFruit" name="fruit" list="fruitList">
+
+        <datalist id="fruitList">
+        <label for="suggestion">or pick a fruit</label>
+        <select id="suggestion" name="altFruit">
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Blackberry</option>
+            <option>Blueberry</option>
+            <option>Lemon</option>
+            <option>Lychee</option>
+            <option>Peach</option>
+            <option>Pear</option>
+        </select>
+        </datalist>
+
+    </form>
+    
 </body>
 </html>
