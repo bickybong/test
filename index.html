@@ -111,6 +111,7 @@
                 <div>
                     <label for="username">Name: <abbr title="required" aria-label="required">*</abbr></label>
                     <input id="username" type="text" name="username">
+                    <span></span>
         </div>
 
         <button type="submit">Submit</button>
@@ -133,6 +134,41 @@
             <option>Pear</option>
         </select>
         </datalist>
+
+        <div>
+            <label for="age">Age (must be 12+): </label>
+            <input id="age" name="age" type="number" min="12" max="120" required>
+            <span></span>
+        </div>
+        <style>
+                    input + span {
+        position: relative;
+        }
+
+        input + span::after {
+        font-size: 0.7rem;
+        position: absolute;
+        padding: 5px 10px;
+        top: -26px;
+        }
+
+        input:required + span::after {
+        color: white;
+        background-color: black;
+        content: "Required";
+        left: -70px;
+        }
+
+        input:out-of-range + span::after {
+        color: white;
+        background-color: red;
+        width: 155px;
+        content: "Outside allowable value range";
+        left: -182px;
+        }
+    </style>
+
+    <textarea placeholder="What's happening?" minlength="5" maxlength="20"></textarea>
 
     </form>
     
