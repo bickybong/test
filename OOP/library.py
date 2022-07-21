@@ -17,7 +17,7 @@ class Library:
 
     def addbook(self, returns):
         self.availableBooks.append(returns)
-        print("You have returned the book. THank you!")
+        print("You have returned the book. Thank you!")
 
 class Customer:
     def request(self):
